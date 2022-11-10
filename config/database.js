@@ -10,10 +10,9 @@ let connection = async () => {
                 
         }
         )
-        console.log('connected to data base');
+        console.log('connected to DB');
     }catch(error){
         console.log(error.message);
     }
 }
-
 connection()
