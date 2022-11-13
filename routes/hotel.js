@@ -1,6 +1,7 @@
 let  router = require('express').Router()
-let {create} = require('../controllers/hotel')
+let {create,update} = require('../controllers/hotel')
 
-router.route('/create').post(create)
+router.post('/create',create)
+router.patch('/update/:id', update)
 
 module.exports = router

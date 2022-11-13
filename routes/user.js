@@ -1,7 +1,7 @@
 let  router = require('express').Router()
 let {create} = require('../controllers/user')
 
-router.route('/').post(create)
+router.post('/create',create)
 
 
 
