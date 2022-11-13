@@ -1,6 +1,5 @@
 let itineraries = [
     {
-        id: "ta1",
         cityId: "636d9804d8061af97199743f",
         name: "Visit Abbey Road Studios",
         photo: ["https://thewotme.com/wp-content/uploads/2014/01/abbey-2293953_1280.jpg" , "https://www.vacheron-constantin.com/dam/ric-import/vac/abb3/2d3a/2171641.jpeg.transform.vacbanner.jpg" , "https://www.clarin.com/img/2021/08/11/bGXueHvve_720x0__1.jpg"],
@@ -10,7 +9,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd9"
     },
     {
-        id: "ta2",
         cityId: "636d9804d8061af97199743f",
         name: "Stonehenge, Windsor Castle, and Bath from London",
         photo: ["https://imagenes.20minutos.es/files/image_990_v3/uploads/imagenes/2021/02/12/stonehenge.jpeg" , "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Windsor_Castle_at_Sunset_-_Nov_2006.jpg/1200px-Windsor_Castle_at_Sunset_-_Nov_2006.jpg" , "https://d3dqioy2sca31t.cloudfront.net/Projects/cms/production/000/024/702/original/ec455f4d473f223e5b56b98263da87d0/england-bath-roman-baths-102518-az.jpg"],
@@ -20,7 +18,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd9"
     },
     {
-        id: "ta3",
         cityId: "636d9804d8061af971997440",
         name: "New York City Statue of Liberty Super Express Cruise",
         photo: ["https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1MTc1MTk3ODI0MDAxNjA5/topic-statue-of-liberty-gettyimages-960610006-promo.jpg" , "https://www.statueoflibertytickets.com/images/lede-nav/pan.jpg" , "https://cdn.contexttravel.com/image/upload/c_fill,q_60,w_2400/v1639681767/production/product_image/image__1639681767.jpg"],
@@ -30,7 +27,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd9"
     },
     {
-        id: "ta4",
         cityId: "636d9804d8061af971997440",
         name: "All-Access 9/11: Ground Zero Tour, Memorial and Museum",
         photo: ["https://www.911memorial.org/sites/default/files/paragraph/hero-banner/2022-09/COM%20PLAZA%20GEN.jpg" , "https://www.911memorial.org/sites/default/files/paragraph/image/2019-08/COM%20AERIAL%20SPRING.JPG" , "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2014_20/442991/ss-140514-9-11-museum-005.jpg"],
@@ -40,7 +36,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bda"
     },
     {
-        id: "ta5",
         cityId: "636d9804d8061af971997441",
         name: "Eiffel Tower Skip the Line and Small Group Tour with Summit Access by Elevator",
         photo: ["https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900" , "https://viajes.nationalgeographic.com.es/medio/2022/07/13/paris_37bc088a_1280x720.jpg" , "https://media.traveler.es/photos/61376b0232d932c80fcb8d00/master/w_1600%2Cc_limit/144336.jpg"],
@@ -50,7 +45,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bda"
     },
     {
-        id: "ta6",
         cityId: "636d9804d8061af971997441",
         name: "Louvre Museum Skip-the-Line Guided Tour with Venus de Milo & Mona Lisa",
         photo: ["https://api-www.louvre.fr/sites/default/files/2021-01/cour-napoleon-et-pyramide_1.jpg" , "https://api-www.louvre.fr/sites/default/files/2021-01/aphrodite-dite-venus-de-milo.jpg" , "https://media.admagazine.com/photos/6294db9ef279f41a2db2b550/16:9/w_2560%2Cc_limit/GettyImages-1174275340.jpg"],
@@ -60,7 +54,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bda"
     },
     {
-        id: "ta7",
         cityId: "636d9804d8061af971997442",
         name: "Half Day Winery Tour",
         photo: ["https://maalwines.com/wp-content/uploads/2022/02/vinedos-LASCOMPUERTAS.jpg" , "http://elportaldemendoza.com/wp-content/uploads/2014/03/bodega-Caro-Escorihuela.jpg" , "https://www.tangol.com/blog/Fotos/Notas/choosing-mendoza-wine-tours_2_202011301004160.PNG"],
@@ -70,7 +63,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd8"
     },
     {
-        id: "ta8",
         cityId: "636d9804d8061af971997442",
         name: "Andes Day Horseback Riding Tour and BBQ",
         photo: ["https://maalwines.com/wp-content/uploads/2022/02/vinedos-LASCOMPUERTAS.jpg" , "http://elportaldemendoza.com/wp-content/uploads/2014/03/bodega-Caro-Escorihuela.jpg" , "https://i0.wp.com/diarioimagen.com.ar/wp-content/uploads/2019/04/Fiesta-Del-Costillar-Al-Asador-2.jpg?fit=960%2C720&ssl=1"],
@@ -80,7 +72,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd8"
     },
     {
-        id: "ta9",
         cityId: "636d9804d8061af971997446",
         name: "Private All Inclusive: Giza Pyramids, Sphinx, Memphis, Saqqara, Lunch & Camels",
         photo: ["https://content.r9cdn.net/rimg/dimg/7e/a1/15f21580-city-9087-166e9cbaf88.jpg?crop=true&width=1020&height=498" , "https://cdn.britannica.com/85/99185-050-E1110E5C/Great-Sphinx-Giza-Egypt.jpg" , "https://www.worldhistory.org/img/c/p/1200x627/10167.jpg"],
@@ -90,7 +81,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd8"
     },
     {
-        id: "ta10",
         cityId: "636d9804d8061af971997446",
         name: "4x4 Desert Safari, Sandsurf, and Camel Ride in Cairo",
         photo: ["https://www.temehu.com/pictures1/p1/land-rover.jpg" , "https://www.ncl.com/sites/default/files/SGA_03NewTourAug13C_lg.jpg" , "https://media-cdn.tripadvisor.com/media/photo-s/0d/ed/f2/49/4x4-desert-safari-dubai.jpg"],
@@ -100,7 +90,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd7"
     },
     {
-        id: "ta11",
         cityId: "636d9804d8061af971997444",
         name: "Private Full Day Sightseeing Tour to Mount Fuji and Hakone",
         photo: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg/1200px-Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg" , "https://media.traveler.es/photos/613774b3ccdecaa3de67194d/4:3/w_1600,h_1200,c_limit/112944.jpg" , "https://laverdadnoticias.com/__export/1563060283348/sites/laverdad/img/2019/07/13/fuji_hakone_izux_el_parque_emblemxtico_de_japxnx_1.jpg_554688468.jpg"],
@@ -110,7 +99,6 @@ let itineraries = [
         userId:  "636d51715d29e99d62636bd7"
     },
     {
-        id: "ta12",
         cityId: "636d9804d8061af971997444",
         name: "Go-kart tour Shinjuku drive metroporitan area",
         photo: ["https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2018/05/Mario-Kart-Tokyo-by-VG.jpg" , "https://www.japanrailpassnow.com/wp-content/uploads/2017/09/Mario-Carts-Tokyo.jpg" , "https://images.dailyhive.com/20190430160748/Mario-Kart-in-Tokyo.-Shutterstock.jpg"],
