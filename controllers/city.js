@@ -48,10 +48,10 @@ create: async(req, res) => {
 update: async(req, res) => {
     let { id } = req.params
     try {
-        let uno = await City.findOneAndUpdate({_id: id}, req.body, {new:true})
-        if (uno){
+        let oneCity = await City.findOneAndUpdate({_id: id}, req.body, {new:true})
+        if (oneCity){
             res.status(200).json({
-            id: uno._id,
+            id: oneCity._id,
             success: true,
             message: 'The city has been modificated with success'
         })
