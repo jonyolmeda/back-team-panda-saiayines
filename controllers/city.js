@@ -19,15 +19,15 @@ create: async(req, res) => {
     },
 
     read: async(req, res) => {
-        let { query } = req
+        let query = {} 
         console.log(req.query)
         if (req.query.name) {
-            query = req.query.name
+            query = {name:{"$regex": req.query.name, $options:'i'}}
         }
         if (req.query.continent) {
             query = {
                 ...query,
-                continent: req.query.continent
+                continent: req.query.continent.split(',')
             }
         }
         try {
