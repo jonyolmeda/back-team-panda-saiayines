@@ -16,6 +16,29 @@ const controller = {
       });
     }
   },
+  read: async(req, res) => {
+    let query = {}
+    let order = {}
+    if(req.query.name){
+        query = {name: {"$regex": req.query.name, $options: 'i'}} 
+    }
+    if(req.query.order){
+        order = {name: req.query.order}
+    }
+    try {
+        let read_hotel = await Hotel.find(query).sort(order)
+        res.status(200).json({
+            response: read_hotel,
+            success: true,
+            message: 'The hotels has been found'
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message
+        })
+    }
+    },
   update: async (req, res) => {
     let { id } = req.params;
     try {
