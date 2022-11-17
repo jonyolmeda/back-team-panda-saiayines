@@ -16,6 +16,33 @@ const controller = {
       });
     }
   },
+    read: async(req, res) => {
+      try {
+        let show = await Show.find(req.query).populate('hotelId','name')
+        show
+        ? res.status(200).json({
+            response: show.map((e) => ({
+              hotelId: e.hotelId,
+              name: e.name,
+              photo: e.photo,
+              description: e.description,
+              price: e.price,
+              date: e.date,
+            })),
+            success: true,
+            message: 'The show has been found',
+        })
+        : res.status(404).json({
+          succes: false,
+          message: "Show not found"
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message
+        })
+    }
+    },
   update: async (req, res) => {
     let { id } = req.params;
     try {
