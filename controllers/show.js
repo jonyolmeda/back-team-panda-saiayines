@@ -28,6 +28,7 @@ const controller = {
               description: e.description,
               price: e.price,
               date: e.date,
+              userId: e.userId
             })),
             success: true,
             message: 'The show has been found',

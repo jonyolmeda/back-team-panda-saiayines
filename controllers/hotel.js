@@ -27,11 +27,18 @@ const controller = {
     }
     try {
         let read_hotel = await Hotel.find(query).sort(order)
-        res.status(200).json({
-            response: read_hotel,
-            success: true,
-            message: 'The hotels has been found'
-        })
+        if(read_hotel.length > 2){
+          res.status(200).json({
+              response: read_hotel,
+              success: true,
+              message: 'The hotels has been found'
+          })
+        }else if(read_hotel.length < 2){
+          res.status(404).json({
+            succes:false,
+            massage: 'Hotels not found'
+          })
+        }
     } catch (error) {
         res.status(400).json({
             success: false,
