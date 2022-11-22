@@ -6,6 +6,7 @@ let itineraries = require('./itinerary')
 let show = require('./show')
 let hotelId = require('./hotelId')
 let cityId = require('./cityId')
+let hotelsByUser = require('./hotelsByUser')
 
 router.use('/user', user)
 router.use('/cities', cities)
@@ -14,6 +15,7 @@ router.use('/hotel', hotelId)
 router.use('/itineraries', itineraries)
 router.use('/shows', show)
 router.use('/city', cityId)
+router.use('/hotelsBy', hotelsByUser)
 
 
 
