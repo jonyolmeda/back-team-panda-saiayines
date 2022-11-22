@@ -5,14 +5,14 @@ const request = require('supertest');
 
 
 describe('GET /api/cities', function(){
-    it('Must give us an array of objects of cities', function(done){
+    it('Must give us an array of objects', function(done){
 
 request(app)
     .get('/api/cities/')
         .expect(response => {
              assert.typeOf(response.body.response, 'array')
              response.body.response.forEach( element => {
-                assert.typeOf(element, 'object')
+                assert.isObject(element, 'It should be an object')
              })
         })
         .end(function(err, res){
@@ -23,4 +23,4 @@ request(app)
             done();
         })
     })
-}) //ordena de manera visual
+}) 
