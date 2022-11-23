@@ -1,4 +1,4 @@
-const City = require('../models/City')
+const Itinerary = require('../models/Itinerary')
 
 const controller = {
     read: async(req, res) => {
@@ -7,17 +7,17 @@ const controller = {
             query = {userId: req.query.userId};
         }
         try {
-            let cities = await City.find(query)
-           if(cities){
+            let itineraries = await Itinerary.find(query)
+           if(itineraries){
                 res.status(200).json({
-                    response: cities,
+                    response: itineraries,
                     success: true,
-                    message: 'Cities Found'
+                    message: 'Itineraries Found'
                 })
             }else{
                 res.status(404).json({
                     succes: false,
-                    message: 'No Cities'
+                    message: 'No Itineraries'
                 })
             }
         } catch (error) {
