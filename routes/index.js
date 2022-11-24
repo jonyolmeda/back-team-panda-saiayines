@@ -9,6 +9,7 @@ let cityId = require('./cityId')
 let hotelsByUser = require('./hotelsByUser')
 let citiesByUser = require('./citiesByUser')
 let itinerariesByUser = require('./itinerariesByUser')
+let showsByUser = require('./showsByUser')
 
 router.use('/user', user)
 router.use('/cities', cities)
@@ -20,6 +21,7 @@ router.use('/city', cityId)
 router.use('/hotelsBy', hotelsByUser)
 router.use('/citiesBy', citiesByUser)
 router.use('/itinerariesBy', itinerariesByUser)
+router.use('/showsBy', showsByUser)
 
 
 module.exports = router
