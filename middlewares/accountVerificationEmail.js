@@ -30,23 +30,23 @@ function getTransport(client) {
 function getEmailBody(mail,code,host) { 
     return `
         <div>
-            <h1>Hola, ${mail}</h1>            
+            <h1>Hello dear, ${mail}</h1>            
             <a href="${host}/api/user/verify/${code}">
-                Verify my account.
+                Please, press here to verify your account.
             </a>
         </div>
     `
 }
 
-const accountVerificationEmail = async (mailDelNuevoUsuario,codigoCalculadoConCrypto) => {
+const accountVerificationEmail = async (mailOfNewUser,codeCalculedWithCrypto) => {
     const client = createClient() 
     client.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH }) 
     const transport = getTransport(client) 
     const mailOptions = {
         from: GOOGLE_USER,
-        to: mailDelNuevoUsuario,
-        subject: 'Verify your new account in Amazing Events',
-        html: getEmailBody(mailDelNuevoUsuario,codigoCalculadoConCrypto,BACK_URL)
+        to: mailOfNewUser,
+        subject: 'Verify your new account in MyTinerary',
+        html: getEmailBody(mailOfNewUser,codeCalculedWithCrypto,BACK_URL)
     }
     await transport.sendMail(
         mailOptions,
