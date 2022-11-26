@@ -2,8 +2,8 @@ const User = require('../models/User')
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
 const accountVerificationEmail = require('../middlewares/accountVerificationEmail')
-const { userSignedUpResponse, userNotFoundResponse } = require('../config/responses')
-     
+const { userSignedUpResponse, userNotFoundResponse,invalidCredentialsResponse} = require('../config/responses')
+const jwt = require('jsonwebtoken')
 
  const controller = {
 register: async(req, res, next) => {
@@ -34,6 +34,53 @@ verify: async (req, res, next) => {
         next(error);
     }
 },
+
+entry: async (req, res, next) => {
+        const { password } = req.body;
+        const { user } = req;
+        try {
+          const checkPassword = bcryptjs.compareSync(password, user.password);
+          if (checkPassword) {
+            const userDB = await User.findOneAndUpdate({ _id: user.id }, { logged: true }, {new:true});
+            const token = jwt.sign(
+              {
+                id: userDB._id,
+                name: userDB.name,
+                photo: userDB.photo,
+                logged: userDB.logged,
+              },
+              process.env.KEY_JWT,
+              { expiresIn: 60 * 60 * 72 }
+            );
+            return res.status(200).json({
+              response: { user, token },
+              success: true,
+              message: "Welcome " + user.name + " !",
+            });
+          }
+          return invalidCredentialsResponse(req, res);
+        } catch (error) {
+          next(error);
+        }
+      },
+
+    loginWithToken: async (req, res, next) => {
+        let { user } = req;
+        try {
+          return res.json({
+            response: {
+              user: {
+                name: user.name,
+                photo: user.photo,
+              },
+            },
+            succes: true,
+            message: "Welcome! " + user.name + " !",
+          });
+        } catch (error) {
+          next(error);
+        }
+      },
 }
 
 module.exports = controller
