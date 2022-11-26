@@ -11,7 +11,7 @@ let citiesByUser = require('./citiesByUser')
 let itinerariesByUser = require('./itinerariesByUser')
 let showsByUser = require('./showsByUser')
 
-router.use('/user', user)
+router.use('/auth', user)
 router.use('/cities', cities)
 router.use('/hotels', hotels)
 router.use('/hotel', hotelId)
