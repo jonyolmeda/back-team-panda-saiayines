@@ -2,7 +2,7 @@ const User = require('../models/User')
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
 const accountVerificationEmail = require('../middlewares/accountVerificationEmail')
-const { userSignedUpResponse, userNotFoundResponse,invalidCredentialsResponse} = require('../config/responses')
+const { userSignedUpResponse, userNotFoundResponse,invalidCredentialsResponse, userSignedOutResponse} = require('../config/responses')
 const jwt = require('jsonwebtoken')
 
  const controller = {
@@ -83,6 +83,15 @@ entry: async (req, res, next) => {
           next(error);
         }
       },
-}
+      unlogin: async (req, res, next) => {
+        try {
+          const { id } = req.user;
+          await User.findOneAndUpdate({ _id: id }, { logged: false });
+          return userSignedOutResponse(req, res);
+        } catch (error) {
+          next(error);
+        }
+      },
+    }
 
 module.exports = controller
