@@ -23,6 +23,7 @@ passport.use(
             email: user.email,
             photo: user.photo,
             role: user.role,
+            logged: user.logged
           };
           return done(null, user);
         } else {
