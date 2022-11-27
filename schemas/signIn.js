@@ -7,8 +7,8 @@ const schema = joi.object({
             .min(2)
             .messages({
                 "any.required": "This field is required.",
-                "string.empty": "This field is empty, please, introduce a name.",
-                "string.min": "This field is required, please, introduce a name with a minimum of 2 letters.",
+                "string.empty": "This field is empty, please, introduce a email.",
+                "string.min": "This field is required, please, introduce a email with a minimum of 2 letters.",
             }),
             password: joi
             .string()
@@ -16,8 +16,8 @@ const schema = joi.object({
             .min(3)
             .messages({
                 "any.required": "This field is required.",
-                "string.empty": "This field is empty, please, introduce a continent.",
-                "string.min": "This field is required, please, introduce a continent with a minimum of 4 letters.",
+                "string.empty": "This field is empty, please, introduce a password.",
+                "string.min": "This field is required, please, introduce a password with a minimum of 4 letters.",
             })
 })
 

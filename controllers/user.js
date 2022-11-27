@@ -71,7 +71,9 @@ entry: async (req, res, next) => {
             response: {
               user: {
                 name: user.name,
+                role: user.role,
                 photo: user.photo,
+                logged: user.logged,
               },
             },
             succes: true,
