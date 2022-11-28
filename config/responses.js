@@ -47,6 +47,35 @@ function verifyResponse(req,res) {
     })
 }
 
+function responseItinerary(req, res) {
+    return res.status(200).json({
+        success: true,
+        message: 'Ok Itinerary'
+    });
+}
+
+function itineraryNotFound(req, res) {
+    return res.status(404).json({
+        success: false,
+        message: "Itinerary not found",
+    });
+}
+
+function itineraryFound(req, res) {
+    return res.status(401).json({
+        success: false,
+        message: 'You are not the owner of this event'
+    });
+}
+
+function notItinerary(req, res) {
+    return res.status(404).json({
+        success: false,
+        message: "Not Found ! ",
+    });
+}
+
+
 module.exports = {
     userSignedUpResponse,
     userExistsResponse,
@@ -54,5 +83,7 @@ module.exports = {
     userSignedOutResponse,
     mustSignInResponse,
     invalidCredentialsResponse,
-    verifyResponse
+    verifyResponse,
+    itineraryFound,
+    notItinerary
 }
