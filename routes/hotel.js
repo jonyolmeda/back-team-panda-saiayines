@@ -4,6 +4,7 @@ const schema = require('../schemas/hotel')
 const validator = require('../middlewares/validator')
 const modelHotel = require('../models/Hotel')
 const verifyHotel = require('../middlewares/verifyHotel')
+const passport = require ('../config/passport')
 
 router.post('/',validator(schema),create)
 router.get('/',read)
