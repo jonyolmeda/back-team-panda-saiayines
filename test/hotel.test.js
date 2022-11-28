@@ -13,6 +13,6 @@ const request = require('supertest');
 
 describe("DELETE /api/hotel/:id", () => {
     it("Delete a hotel by id.", (done) => {
-        request(app).del("/api/hotels/63705a14a2c3190ac7044f50").expect(200).end(done)   });
+        request(app).del("/api/hotels/63705a14a2c3190ac7044f4f").expect(200).end(done)   });
     }
 );
