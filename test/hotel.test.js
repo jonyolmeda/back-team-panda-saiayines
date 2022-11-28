@@ -11,3 +11,10 @@ const request = require('supertest');
         })
     }
 ) 
+
+describe("DELETE /hotel/:id", () => {
+    it("Delete a hotel by id.", (done) => {
+        request(app).del("/hotel/63705a14a2c3190ac7044f50")
+    .expect(200).end(done)
+    });
+});
