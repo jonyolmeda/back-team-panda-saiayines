@@ -47,21 +47,21 @@ function verifyResponse(req,res) {
     })
 }
 
-function responseItinerary(req, res) {
-    return res.status(200).json({
-        success: true,
-        message: 'Ok Itinerary'
+function itineraryFound(req, res) {
+    return res.status(401).json({
+        success: false,
+        message: 'You are not the owner of this event'
     });
 }
 
-function itineraryNotFound(req, res) {
+function notShow(req, res) {
     return res.status(404).json({
         success: false,
-        message: "Itinerary not found",
+        message: "Not Found ! ",
     });
 }
 
-function itineraryFound(req, res) {
+function showFound(req, res) {
     return res.status(401).json({
         success: false,
         message: 'You are not the owner of this event'
@@ -85,5 +85,7 @@ module.exports = {
     invalidCredentialsResponse,
     verifyResponse,
     itineraryFound,
-    notItinerary
+    notItinerary,
+    notShow,
+    showFound
 }
