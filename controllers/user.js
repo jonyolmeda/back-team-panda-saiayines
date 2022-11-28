@@ -70,6 +70,7 @@ entry: async (req, res, next) => {
           return res.json({
             response: {
               user: {
+                id: user.id,
                 name: user.name,
                 role: user.role,
                 photo: user.photo,
