@@ -88,6 +88,20 @@ function notCity(req, res) {
     });
 }
 
+function hotelFound(req, res) {
+    return res.status(401).json({
+        success: false,
+        message: 'You are not the owner of this event'
+    });
+}
+
+function notHotel(req, res) {
+    return res.status(404).json({
+        success: false,
+        message: "Not Found ! ",
+    });
+}
+
 module.exports = {
     userSignedUpResponse,
     userExistsResponse,
@@ -101,5 +115,7 @@ module.exports = {
     notShow,
     showFound,
     notCity,
-    cityFound
+    cityFound,
+    notHotel,
+    hotelFound
 }
