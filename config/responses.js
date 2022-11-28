@@ -74,7 +74,19 @@ function notItinerary(req, res) {
         message: "Not Found ! ",
     });
 }
+function cityFound(req, res) {
+    return res.status(401).json({
+        success: false,
+        message: 'You are not the owner of this event'
+    });
+}
 
+function notCity(req, res) {
+    return res.status(404).json({
+        success: false,
+        message: "Not Found ! ",
+    });
+}
 
 module.exports = {
     userSignedUpResponse,
@@ -87,5 +99,7 @@ module.exports = {
     itineraryFound,
     notItinerary,
     notShow,
-    showFound
+    showFound,
+    notCity,
+    cityFound
 }
