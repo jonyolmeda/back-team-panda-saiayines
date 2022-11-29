@@ -3,12 +3,13 @@ let {create,read,update,destroy} = require('../controllers/hotel')
 const schema = require('../schemas/hotel')
 const validator = require('../middlewares/validator')
 const modelHotel = require('../models/Hotel')
-const verifyHotel = require('../middlewares/verifyHotel')
+const verifyAll = require('../middlewares/verifyAll')
 const passport = require ('../config/passport')
+const { hotelFound, notHotel } = require("../config/responses");
 
-router.post('/',validator(schema),create)
+router.post('/',passport.authenticate("jwt", { session: false }), validator(schema), create)
 router.get('/',read)
-router.patch('/:id',passport.authenticate("jwt", { session: false }),verifyHotel(modelHotel), update)
-router.delete('/:id',passport.authenticate("jwt", { session: false }),verifyHotel(modelHotel), destroy)
+router.patch('/:id',passport.authenticate("jwt", { session: false }),verifyAll(modelHotel,hotelFound, notHotel), update)
+router.delete('/:id',passport.authenticate("jwt", { session: false }),verifyAll(modelHotel,hotelFound, notHotel), destroy)
 
 module.exports = router

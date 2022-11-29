@@ -31,7 +31,7 @@ function getEmailBody(mail,code,host) {
     return `
         <div>
             <h1>Hello dear, ${mail}</h1>            
-            <a href="${host}/api/auth/verify/${code}">
+            <a href="${host}api/auth/verify/${code}">
                 Please, press here to verify your account.
             </a>
         </div>
