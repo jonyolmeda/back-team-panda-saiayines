@@ -28,12 +28,6 @@ const schema = joi.object({
                 "any.required": "This field is required.",
                 "number.empty": "This field is empty, please, introduce a number."
             }),
-            cityId: joi
-            .any()
-            ,
-            userId: joi
-            .any()
-            ,
 })
 
 module.exports = schema

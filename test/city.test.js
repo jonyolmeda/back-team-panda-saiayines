@@ -22,5 +22,10 @@ request(app)
 
             done();
         })
+        describe("DELETE /api/city/:id", () => {
+            it("Delete a city by id.", (done) => {
+                request(app).del("/api/cities/6370050ab7c89552d1eb2f7b").expect(200).end(done)   });
+            }
+        );
     })
 }) 

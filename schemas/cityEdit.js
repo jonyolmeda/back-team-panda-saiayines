@@ -11,7 +11,8 @@ const schema = joi.object({
                 "string.empty": "This field is empty, please, introduce a name.",
                 "string.min": "This field is required, please, introduce a name with a minimum of 2 letters.",
                 "string.max": "This field is required, please, introduce a name with less than 30 letters."
-            }),
+            })
+            ,
             photo: joi
             .string()
             .required()
@@ -20,20 +21,16 @@ const schema = joi.object({
                 "any.required": "This field is required.",
                 "string.uri": "This field is required, please, introduce a photo."
             }),
-            capacity: joi.
+            population: joi.
             number()
             .required()
             .min(1)
             .messages({
                 "any.required": "This field is required.",
                 "number.empty": "This field is empty, please, introduce a number."
+
             }),
-            cityId: joi
-            .any()
-            ,
-            userId: joi
-            .any()
-            ,
+
 })
 
 module.exports = schema
