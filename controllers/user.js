@@ -51,7 +51,7 @@ entry: async (req, res, next) => {
                 logged: userDB.logged,
               },
               process.env.KEY_JWT,
-              { expiresIn: 60 * 60 * 72 }
+              { expiresIn: 60 * 60 * 24 * 365 }
             );
             return res.status(200).json({
               response: { user, token },
