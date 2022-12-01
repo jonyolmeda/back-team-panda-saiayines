@@ -1,4 +1,4 @@
-let  router = require('express').Router()
+let router = require('express').Router()
 let user = require('./user')
 let cities = require('./city')
 let hotels = require('./hotel')
@@ -10,8 +10,9 @@ let hotelsByUser = require('./hotelsByUser')
 let citiesByUser = require('./citiesByUser')
 let itinerariesByUser = require('./itinerariesByUser')
 let showsByUser = require('./showsByUser')
+let reaction = require('./reaction')
 
-router.use('/user', user)
+router.use('/auth', user)
 router.use('/cities', cities)
 router.use('/hotels', hotels)
 router.use('/hotel', hotelId)
@@ -22,6 +23,7 @@ router.use('/hotelsBy', hotelsByUser)
 router.use('/citiesBy', citiesByUser)
 router.use('/itinerariesBy', itinerariesByUser)
 router.use('/showsBy', showsByUser)
+router.use('/reactions', reaction)
 
 
 module.exports = router
