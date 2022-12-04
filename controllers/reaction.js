@@ -76,12 +76,17 @@ create: async(req, res) => {
         if (req.query.itineraryId) {
           query = { itineraryId: req.query.itineraryId };
         }
+        if(req.query.userId){
+            query = {
+                ...query,
+                userId: req.query.userId
+            }
+        }
         try {
-          let reactions = await Reaction.find(query).populate({
-            path: "userId",
-            select: "name lastName photo",
-          });
-          if (reactions.length > 0) {
+          let reactions = await Reaction.find(query)
+          .populate({ path: "userId", select: "name lastName photo"})
+          .populate({ path: "itineraryId", select: "name  photo _id"})
+          if (reactions) {
             res.status(200).json({
               data: reactions,
               id: req.query.itineraryId,
@@ -100,6 +105,27 @@ create: async(req, res) => {
             success: false,
             message: error.message,
             data: error,
+          });
+        }
+      },
+      destroy: async (req, res) => {
+        let { id } = req.params;
+    
+        try {
+          let response = await Reaction.findOneAndUpdate(
+            { _id: id },
+            { $pull: { userId: req.user.id } },
+            { new: true }
+          );
+          res.status(200).json({
+            message: `reaction removed`,
+            success: true,
+            response,
+          });
+        } catch (error) {
+          res.status(400).json({
+            message: error.message,
+            success: false,
           });
         }
       },
