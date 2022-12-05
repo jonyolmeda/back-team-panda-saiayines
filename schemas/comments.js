@@ -1,6 +1,9 @@
 const joi = require('joi')
 
 const schema = joi.object({
+            nameUser: joi.any(),
+            photoUser: joi.any(),
+            roleUser: joi.any(),
             showId: joi
             .any()  
             ,
