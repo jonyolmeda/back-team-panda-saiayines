@@ -33,6 +33,11 @@ const controller = {
         if(req.query.showId){
             query = {showId: req.query.showId};
         }
+
+        if (req.query.itineraryId) {
+            query = { itineraryId: req.query.itineraryId};
+          }
+
       
         try {
             let comments = await Comments.find(query).sort({ date: -1 });
@@ -64,6 +69,7 @@ const controller = {
           let comment = await Comments.findOneAndUpdate({ _id: id }, {
           comment: req.body.comment,
           showId: req.body.showId,
+          itineraryId: req.body.itineraryId,
           date: req.body.date,
           userId: user.id,
           name: user.name,
