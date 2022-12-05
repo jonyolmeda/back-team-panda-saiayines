@@ -16,37 +16,35 @@ const controller = {
       });
     }
   },
-  read: async (req, res) => {
-    try {
-      let itinerary = await Itinerary.find(req.query).populate(
-        "cityId",
-        "name"
-      );
-      itinerary
-        ? res.status(200).json({
-            response: itinerary.map((e) => ({
-              cityId: e.cityId,
-              name: e.name,
-              photo: e.photo,
-              description: e.description,
-              price: e.price,
-              duration: e.duration,
-              userId: e.userId,
-            })),
-            success: true,
-            message: "The city has been found",
-          })
-        : res.status(404).json({
-            succes: false,
-            message: "City not found",
-          });
-    } catch (error) {
-      res.status(400).json({
-        success: false,
-        message: error.message,
-      });
+  read: async (req, res)=> {
+    let query = {};
+    if(req.query.cityId){
+        query = {
+            cityId:req.query.cityId
+        }
     }
-  },
+    try {
+        let itinerary = await Itinerary.find(query)
+        if(itinerary){
+            res.status(200).json({
+                response: itinerary,
+                success: true,
+                message: 'itinerary.'
+            })
+        }else{
+            res.status(404).json({
+                success: false,
+                message: 'Itinerary not found.'
+            })
+        }
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message
+        })
+    }
+},
+
   update: async (req, res) => {
     let { id } = req.params;
     try {

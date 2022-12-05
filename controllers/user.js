@@ -79,7 +79,7 @@ entry: async (req, res, next) => {
               },
             },
             succes: true,
-            message: "Welcome! " + user.name + " !",
+            message: "Welcome " + user.name + " !",
           });
         } catch (error) {
           next(error);
