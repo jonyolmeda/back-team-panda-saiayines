@@ -10,6 +10,8 @@ let hotelsByUser = require('./hotelsByUser')
 let citiesByUser = require('./citiesByUser')
 let itinerariesByUser = require('./itinerariesByUser')
 let showsByUser = require('./showsByUser')
+let reaction = require('./reaction')
+let comments = require('./comments')
 
 router.use('/auth', user)
 router.use('/cities', cities)
@@ -22,6 +24,10 @@ router.use('/hotelsBy', hotelsByUser)
 router.use('/citiesBy', citiesByUser)
 router.use('/itinerariesBy', itinerariesByUser)
 router.use('/showsBy', showsByUser)
+router.use('/reactions', reaction)
+router.use('/comments', comments)
 
 
 module.exports = router
+
+
