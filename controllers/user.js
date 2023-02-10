@@ -109,6 +109,9 @@ const controller = {
             role: user.role,
             photo: user.photo,
             logged: user.logged,
+            lastName: user.lastName,
+            age: user.age,
+            email: user.email
           },
         },
         succes: true,
