@@ -9,9 +9,6 @@ const mustSignIn =  require ('../middlewares/mustSignIn')
 const accountExistsSignIn = require('../middlewares/accountExistsSignIn')
 const passport = require ('../config/passport')
 const accountHasBeenVerified = require('../middlewares/accountHasBeenVerified')
-const verifyAll = require('../middlewares/verifyAll')
-const { cityFound, notCity } = require("../config/responses");
-const model = require('../models/User')
 
 
 
@@ -24,4 +21,3 @@ router.get('/me/:id',passport.authenticate("jwt", { session: false }) ,readUserD
 router.patch('/me/:id',passport.authenticate("jwt", { session: false }),validator(schemaProfile),updateUserData)
 
 module.exports = router
-
